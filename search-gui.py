@@ -4,7 +4,6 @@ import pyvis.network
 import os
 
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -661,7 +660,6 @@ class Ui_MainWindow(object):
                 if x in a and y in a:
                     color = "green"
                 pyvis_graph.add_edge(x, y, label=z, title=z, color=color)
-        # t = "Path: {n1} ,distance: {n2} ,total: {n3} ,max: {n4}".format(n1=a, n2=b, n3=c, n4=d)
         pyvis_graph.force_atlas_2based()
         pyvis_graph.show(nameOfGraph)
         self.path.setPlainText(str(a))
@@ -695,15 +693,9 @@ class Ui_MainWindow(object):
                 if x in a and y in a:
                     color = "green"
                 pyvis_graph.add_edge(x, y, label=z, title=z, color=color)
-        # t = "Path: {n1} ,distance: {n2} ,total: {n3} ,max: {n4}".format(n1=a, n2=b, n3=c, n4=d)
-        # t = t.replace("Path:",termcolor.colored("Path:","blue"))
-        # t = t.replace("distance:",termcolor.colored("distance:","blue"))
-        # t = t.replace("total:",termcolor.colored("total:","blue"))
-        # t = t.replace("max:",termcolor.colored("max:","blue"))
-        # print(t)
+
         pyvis_graph.force_atlas_2based()
         pyvis_graph.show(nameOfGraph)
-        # self.textEdit.setPlainText(t)
         self.path.setPlainText(str(a))
         self.distance.setPlainText(str(b))
         self.total.setPlainText(str(c))
@@ -735,10 +727,8 @@ class Ui_MainWindow(object):
                 if x in a and y in a:
                     color = "green"
                 pyvis_graph.add_edge(x, y, label=z, title=z, color=color)
-        # t = "Path: {n1} ,distance: {n2} ,total: {n3} ,max: {n4}".format(n1=a, n2=b, n3=c, n4=d)
         pyvis_graph.force_atlas_2based()
         pyvis_graph.show(nameOfGraph)
-        # self.textEdit.setPlainText(t)
         self.path.setPlainText(str(a))
         self.distance.setPlainText(str(b))
         self.total.setPlainText(str(c))
@@ -746,7 +736,7 @@ class Ui_MainWindow(object):
         directory = os.getcwd()
         directory = directory.replace('\\', '/')
         print(directory)
-        url = "file:///{dir}/{name}".format(dir= directory,name=nameOfGraph)
+        url = "file:///{dir}/{name}".format(dir=directory, name=nameOfGraph)
         self.widget.setUrl(QtCore.QUrl(url))
 
 

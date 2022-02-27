@@ -1,6 +1,5 @@
 dict_graph = {}
 
-# Read the data.txt file
 with open('cities.txt', 'r') as f:
     for l in f:
         city_a, city_b, p_cost = l.split()
@@ -12,7 +11,6 @@ with open('cities.txt', 'r') as f:
         dict_graph[city_b][city_a] = float(p_cost)
 
 
-# Breadth First Search Method
 def BreadthFirstSearch(graph, src, dst):
     max = 0
     q = [(src, [src], 0)]
@@ -36,7 +34,6 @@ def BreadthFirstSearch(graph, src, dst):
                     q.append((temp, path + [temp], cost + graph[node][temp]))
 
 
-# Iterative Deepening Search Method
 def IterativeDeepening(graph, src, dst):
     level = 0
     count = 0
