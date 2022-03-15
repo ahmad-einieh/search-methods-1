@@ -117,3 +117,6 @@ def ucs(graph, src, dst):
 
                     q.append((temp, path + [temp], cost + graph[node][temp]))
                     q.sort(key=ucsHelper)
+
+
+print(dict_graph['Adham'].keys())
